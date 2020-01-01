@@ -17,13 +17,15 @@ class CreateApplicationsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->integer('post_id')->unsigned();
+//            $table->primary(['user_id', 'post_id']);
+            $table->unique(['user_id', 'post_id']);
             $table->string('farmerName');
-            $table->string('farmerType');
+//            $table->string('farmerType');
             $table->string('landAmount');
             $table->string('nidNo');
             $table->string('nidImage')->default('default.png');
             $table->string('phone');
-            $table->string('district');
+//            $table->string('district');
             $table->text('address');
             $table->string('nomineeName');
             $table->string('nRelation');
@@ -31,10 +33,11 @@ class CreateApplicationsTable extends Migration
             $table->string('nNidImage')->default('default.png');
             $table->string('nomineeImage')->default('default.png');
             $table->text('nAddress');
+            $table->string('status');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('posts_id')->references('id')->on('posts')->onDelete('cascade');
             $table->timestamps();
-            $table->primary(['user_id', 'post_id']);
+
         });
     }
 

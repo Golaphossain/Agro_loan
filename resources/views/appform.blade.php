@@ -435,7 +435,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="pull-right">
-{{--                        <a class="btn btn-primary" href="https://www.onlinekrishi.gov.bd/user/loans">পিছনে দেখতে</a>--}}
+
                     </div>
                 </div>
             </div>
@@ -446,45 +446,43 @@
                         <div class="panel-body">
                             <form class="form-horizontal" action="{{route('applyforLoan',$post->id)}}" enctype="multipart/form-data" method="POST">
                                 @csrf
-{{--                                <input name="_token" type="hidden" value="PgBNyZ9RjbpxHFpnISqzQp4lorH7nELHbWIvJ4b0">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="col-md-3 control-label" for="farmerName">কৃষকের নাম </label>--}}
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <input name="farmerName" class="form-control number" id="farmerName" style="text-align: right;" required="" type="text" value="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="farmerName">কৃষকের নাম </label>
-                                    <div class="col-md-6">
-                                        <input name="farmerName" class="form-control number" id="farmerName" style="text-align: right;" required="" type="text" value="">
-                                    </div>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="col-md-3 control-label" for="farmerType">কৃষকের ধরন</label>--}}
+{{--                                    <div class="col-md-6 my-1">--}}
+{{--                                        <!--<input id="farmer_type" type="text" class="form-control" name="farmer_type" value="" required>-->--}}
 
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="farmerType">কৃষকের ধরন</label>
-                                    <div class="col-md-6 my-1">
-                                        <!--<input id="farmer_type" type="text" class="form-control" name="farmer_type" value="" required>-->
-
-                                        <select name="farmerType" class="form-control show-tick" id="farmerType" data-live-search="true">
-                                            <option selected="selected" value="">Select</option>
-                                            <option value="own_land">নিজ জমি</option>
-                                            <option value="lease_land">ইজারা জমি</option>
-                                            <option value="tenant_farmers">বর্গা চাষি</option>
-                                            <option value="other_farmers">অন্যান্য চাষি</option>
-                                        </select>
-                                    </div>
-                                </div>
+{{--                                        <select name="farmerType" class="form-control show-tick" id="farmerType" data-live-search="true">--}}
+{{--                                            <option selected="selected" value="">Select</option>--}}
+{{--                                            <option value="own_land">নিজ জমি</option>--}}
+{{--                                            <option value="lease_land">ইজারা জমি</option>--}}
+{{--                                            <option value="tenant_farmers">বর্গা চাষি</option>--}}
+{{--                                            <option value="other_farmers">অন্যান্য চাষি</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                     <div class="form-group">
-                                    <label class="col-md-3 control-label" for="landAmount">কৃষিজমির পরিমাণ(শতাংশ)</label>
+                                    <label class="col-md-3 control-label" for="landAmount">কৃষিজমি(শতাংশ)</label>
                                     <div class="col-md-6">
                                         <input name="landAmount" class="form-control number" id="landAmount" style="text-align: right;" type="text" value="">
                                     </div>
                                 </div>
 
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="col-md-3 control-label" for="nidNo">জাতীয় পরিচয়পত্র নং</label>--}}
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <input name="nidNo" class="form-control number" id="nidNo" style="text-align: right;" type="text" value="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="nidNo">জাতীয় পরিচয়পত্র নং</label>
-                                    <div class="col-md-6">
-                                        <input name="nidNo" class="form-control number" id="nidNo" style="text-align: right;" type="text" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="nidImage">জাতীয় পরিচয়পত্রের ছবি</label>
+                                    <label class="col-md-3 control-label" for="nidImage">কৃষকের এনআইডি ছবি</label>
                                     <div class="col-md-6">
                                         <input name="nidImage" class="form-control" id="nidImage" onchange="check_image(this);" type="file">
                                         <span class="help-block">
@@ -492,84 +490,84 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="phone">ফোন নম্বর</label>
-                                    <div class="col-md-6">
-                                        <input name="phone" class="form-control" id="phone" type="text" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="district">জেলা</label>
-                                    <div class="col-md-6">
-                                        <select name="district" class="form-control show-tick" id="district" data-live-search="true">
-                                            <option selected="selected" value="">Select</option>
-                                            <option value="Bagerhat">Bagerhat</option>
-                                            <option value="Bandarban">Bandarban</option>
-                                            <option value="Barguna">Barguna</option>
-                                            <option value="Barisal">Barisal</option>
-                                            <option value="Bhola">Bhola</option>
-                                            <option value="Bogra">Bogra</option>
-                                            <option value="Brahmanbaria">Brahmanbaria</option>
-                                            <option value="Chandpur">Chandpur</option>
-                                            <option value="Chittagong">Chittagong</option>
-                                            <option value="Chuadanga">Chuadanga</option>
-                                            <option value="Comilla">Comilla</option>
-                                            <option value="Cox'sBazar">Cox'sBazar</option>
-                                            <option value="Dhaka">Dhaka</option>
-                                            <option value="Dinajpur">Dinajpur</option>
-                                            <option value="Faridpur">Faridpur</option>
-                                            <option value="Feni">Feni</option>
-                                            <option value="Gaibandha">Gaibandha</option>
-                                            <option value="Gazipur">Gazipur</option>
-                                            <option value="Gopalganj">Gopalganj</option>
-                                            <option value="Habiganj">Habiganj</option>
-                                            <option value="Jaipurhat">Jaipurhat</option>
-                                            <option value="Jamalpur">Jamalpur</option>
-                                            <option value="Jessore">Jessore</option>
-                                            <option value="Jhalokati">Jhalokati</option>
-                                            <option value="Jhenaidah">Jhenaidah</option>
-                                            <option value="Khagrachari">Khagrachari</option>
-                                            <option value="Khulna">Khulna</option>
-                                            <option value="Kishoreganj">Kishoreganj</option>
-                                            <option value="Kurigram">Kurigram</option>
-                                            <option value="Kushtia">Kushtia</option>
-                                            <option value="Lakshmipur">Lakshmipur</option>
-                                            <option value="Lalmonirhat">Lalmonirhat</option>
-                                            <option value="Madaripur">Madaripur</option>
-                                            <option value="Magura">Magura</option>
-                                            <option value="Manikganj">Manikganj</option>
-                                            <option value="Maulvibazar">Maulvibazar</option>
-                                            <option value="Meherpur">Meherpur</option>
-                                            <option value="Munshiganj">Munshiganj</option>
-                                            <option value="Mymensingh">Mymensingh</option>
-                                            <option value="Naogaon">Naogaon</option>
-                                            <option value="Narail">Narail</option>
-                                            <option value="Narayanganj">Narayanganj</option>
-                                            <option value="Narsingdi">Narsingdi</option>
-                                            <option value="Natore">Natore</option>
-                                            <option value="Nawabganj">Nawabganj</option>
-                                            <option value="Netrokona">Netrokona</option>
-                                            <option value="Nilphamari">Nilphamari</option>
-                                            <option value="Noakhali">Noakhali</option>
-                                            <option value="Pabna">Pabna</option>
-                                            <option value="Panchagarh">Panchagarh</option>
-                                            <option value="Patuakhali">Patuakhali</option>
-                                            <option value="Pirojpur">Pirojpur</option>
-                                            <option value="Rajbari">Rajbari</option>
-                                            <option value="Rajshahi">Rajshahi</option>
-                                            <option value="Rangamati">Rangamati</option>
-                                            <option value="Rangpur">Rangpur</option>
-                                            <option value="Satkhira">Satkhira</option>
-                                            <option value="Shariatpur">Shariatpur</option>
-                                            <option value="Sherpur">Sherpur</option>
-                                            <option value="Sirajganj">Sirajganj</option>
-                                            <option value="Sunamganj">Sunamganj</option>
-                                            <option value="Sylhet">Sylhet</option>
-                                            <option value="Tangail">Tangail</option>
-                                            <option value="Thakurgaon">Thakurgaon</option>
-                                        </select>
-                                    </div>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="col-md-3 control-label" for="phone">ফোন নম্বর</label>--}}
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <input name="phone" class="form-control" id="phone" type="text" value="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label class="col-md-3 control-label" for="district">জেলা</label>--}}
+{{--                                    <div class="col-md-6">--}}
+{{--                                        <select name="district" class="form-control show-tick" id="district" data-live-search="true">--}}
+{{--                                            <option selected="selected" value="">Select</option>--}}
+{{--                                            <option value="Bagerhat">Bagerhat</option>--}}
+{{--                                            <option value="Bandarban">Bandarban</option>--}}
+{{--                                            <option value="Barguna">Barguna</option>--}}
+{{--                                            <option value="Barisal">Barisal</option>--}}
+{{--                                            <option value="Bhola">Bhola</option>--}}
+{{--                                            <option value="Bogra">Bogra</option>--}}
+{{--                                            <option value="Brahmanbaria">Brahmanbaria</option>--}}
+{{--                                            <option value="Chandpur">Chandpur</option>--}}
+{{--                                            <option value="Chittagong">Chittagong</option>--}}
+{{--                                            <option value="Chuadanga">Chuadanga</option>--}}
+{{--                                            <option value="Comilla">Comilla</option>--}}
+{{--                                            <option value="Cox'sBazar">Cox'sBazar</option>--}}
+{{--                                            <option value="Dhaka">Dhaka</option>--}}
+{{--                                            <option value="Dinajpur">Dinajpur</option>--}}
+{{--                                            <option value="Faridpur">Faridpur</option>--}}
+{{--                                            <option value="Feni">Feni</option>--}}
+{{--                                            <option value="Gaibandha">Gaibandha</option>--}}
+{{--                                            <option value="Gazipur">Gazipur</option>--}}
+{{--                                            <option value="Gopalganj">Gopalganj</option>--}}
+{{--                                            <option value="Habiganj">Habiganj</option>--}}
+{{--                                            <option value="Jaipurhat">Jaipurhat</option>--}}
+{{--                                            <option value="Jamalpur">Jamalpur</option>--}}
+{{--                                            <option value="Jessore">Jessore</option>--}}
+{{--                                            <option value="Jhalokati">Jhalokati</option>--}}
+{{--                                            <option value="Jhenaidah">Jhenaidah</option>--}}
+{{--                                            <option value="Khagrachari">Khagrachari</option>--}}
+{{--                                            <option value="Khulna">Khulna</option>--}}
+{{--                                            <option value="Kishoreganj">Kishoreganj</option>--}}
+{{--                                            <option value="Kurigram">Kurigram</option>--}}
+{{--                                            <option value="Kushtia">Kushtia</option>--}}
+{{--                                            <option value="Lakshmipur">Lakshmipur</option>--}}
+{{--                                            <option value="Lalmonirhat">Lalmonirhat</option>--}}
+{{--                                            <option value="Madaripur">Madaripur</option>--}}
+{{--                                            <option value="Magura">Magura</option>--}}
+{{--                                            <option value="Manikganj">Manikganj</option>--}}
+{{--                                            <option value="Maulvibazar">Maulvibazar</option>--}}
+{{--                                            <option value="Meherpur">Meherpur</option>--}}
+{{--                                            <option value="Munshiganj">Munshiganj</option>--}}
+{{--                                            <option value="Mymensingh">Mymensingh</option>--}}
+{{--                                            <option value="Naogaon">Naogaon</option>--}}
+{{--                                            <option value="Narail">Narail</option>--}}
+{{--                                            <option value="Narayanganj">Narayanganj</option>--}}
+{{--                                            <option value="Narsingdi">Narsingdi</option>--}}
+{{--                                            <option value="Natore">Natore</option>--}}
+{{--                                            <option value="Nawabganj">Nawabganj</option>--}}
+{{--                                            <option value="Netrokona">Netrokona</option>--}}
+{{--                                            <option value="Nilphamari">Nilphamari</option>--}}
+{{--                                            <option value="Noakhali">Noakhali</option>--}}
+{{--                                            <option value="Pabna">Pabna</option>--}}
+{{--                                            <option value="Panchagarh">Panchagarh</option>--}}
+{{--                                            <option value="Patuakhali">Patuakhali</option>--}}
+{{--                                            <option value="Pirojpur">Pirojpur</option>--}}
+{{--                                            <option value="Rajbari">Rajbari</option>--}}
+{{--                                            <option value="Rajshahi">Rajshahi</option>--}}
+{{--                                            <option value="Rangamati">Rangamati</option>--}}
+{{--                                            <option value="Rangpur">Rangpur</option>--}}
+{{--                                            <option value="Satkhira">Satkhira</option>--}}
+{{--                                            <option value="Shariatpur">Shariatpur</option>--}}
+{{--                                            <option value="Sherpur">Sherpur</option>--}}
+{{--                                            <option value="Sirajganj">Sirajganj</option>--}}
+{{--                                            <option value="Sunamganj">Sunamganj</option>--}}
+{{--                                            <option value="Sylhet">Sylhet</option>--}}
+{{--                                            <option value="Tangail">Tangail</option>--}}
+{{--                                            <option value="Thakurgaon">Thakurgaon</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="address">ঠিকানা</label>
                                     <div class="col-md-6">
@@ -591,15 +589,20 @@
                                         <input name="nRelation" class="form-control" id="nRelation" type="text" value="">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="nNid">জাতীয় পরিচয়পত্র নং</label>
+                                    <label class="col-md-3 control-label" for="nAddress">ঠিকানা</label>
+                                    <div class="col-md-6">
+                                        <textarea name="nAddress" class="form-control" id="nAddress"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="nNid">এনআইডি নং</label>
                                     <div class="col-md-6">
                                         <input name="nNid" class="form-control number" id="nNid" style="text-align: right;" type="text" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="nNidImage">জাতীয় পরিচয়পত্রের ছবি</label>
+                                    <label class="col-md-3 control-label" for="nNidImage">এনআইডির ছবি</label>
                                     <div class="col-md-6">
                                         <input name="nNidImage" class="form-control" id="nNidImage" onchange="check_image(this);" type="file">
                                         <span class="help-block">
@@ -616,12 +619,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="nAddress">ঠিকানা</label>
-                                    <div class="col-md-6">
-                                        <textarea name="nAddress" class="form-control" id="nAddress"></textarea>
-                                    </div>
-                                </div>
+
 {{--                                <div class="form-group">--}}
 {{--                                    <label class="col-md-3 control-label" for="attachments">সংযু্ক্তি সমূহ</label>--}}
 {{--                                    <div class="col-md-6">--}}

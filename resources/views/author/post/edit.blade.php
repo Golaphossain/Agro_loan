@@ -85,8 +85,8 @@
                                 </div>
                             </div>
                             <div class="form-group form-float">
-                                <div class="form-line">
-                                    <label for="installment">Installment Type</label>
+                                <div class="form-line" {{$errors->has('installment_type') ? 'focused error':''}}>
+                                    <label for="installment_type">Installment Type</label>
                                     <select name="installment_type" size="1" id="installment_type" class="form-control show-tick" data-live-search="true" >
                                         {{--                                            <option selected="selected" value="">Select</option>--}}
                                         <option value="Monthly">Monthly</option>

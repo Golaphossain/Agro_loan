@@ -27,20 +27,21 @@ class ApplicationController extends Controller
         //store
         //redirect
         $this->validate($request,[
-            'farmerName'=>'required',
-            'farmerType'=>'required',
+//            'farmerName'=>'required',
+//            'farmerType'=>'required',
             'landAmount'=>'required',
-            'nidNo'=>'required|max:11',
+//            'nidNo'=>'required|max:11',
             'nidImage'=>'required|image|max:2048',
-            'phone'=>'required|max:13',
-            'district'=>'required',
+//            'phone'=>'required|max:13',
+//            'district'=>'required',
             'address'=>'required',
             'nomineeName'=>'required',
             'nRelation'=>'required',
+            'nAddress'=>'required',
             'nNid'=>'required|max:11',
             'nNidImage'=>'required|image|max:2048',
             'nomineeImage'=>'required|image|max:2048',
-            'nAddress'=>'required',
+
         ]);
         $nidImage=$request->file('nidImage');
         $nNidImage=$request->file('nNidImage');
@@ -71,13 +72,13 @@ class ApplicationController extends Controller
         $application= new Application();
         $application->user_id=Auth::id();
         $application->post_id=$id;
-        $application->farmerName=$request->farmerName;
-        $application->farmerType=$request->farmerType;
+        $application->farmerName=Auth::user()->name;
+//        $application->farmerType=$request->farmerType;
         $application->landAmount=$request->landAmount;
-        $application->nidNo=$request->nidNo;
+        $application->nidNo=Auth::user()->national_id;
         $application->nidImage = $imagename1;
-        $application->phone=$request->phone;
-        $application->district=$request->district;
+        $application->phone=Auth::user()->phone;
+//        $application->district=$request->district;
         $application->address=$request->address;
         $application->nomineeName=$request->nomineeName;
         $application->nRelation=$request->nRelation;
@@ -85,8 +86,17 @@ class ApplicationController extends Controller
         $application->nNidImage = $imagename2;
         $application->nomineeImage = $imagename3;
         $application->nAddress=$request->nAddress;
+        $application->status='pending';
         $application->save();
         Toastr::success('Submitted Successfully :)','Success');
         return redirect()->route('home');
+    }
+    public function applyUpdate($id)
+    {
+        $categories=Category::all();
+        $application=Application::where('id',$id)->first();
+//        return $application;
+        return view('progress',compact('application','categories'));
+
     }
 }

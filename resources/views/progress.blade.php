@@ -8,7 +8,75 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <style>
-        * {
+        /** {*/
+        /*    -webkit-box-sizing: border-box;*/
+        /*    box-sizing: border-box;*/
+        /*}*/
+        .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        /* @media all and (min-width:768px) */
+        /*body {*/
+        /*    margin: 0;*/
+        /*}*/
+        /*body {*/
+        /*    font-family: "Raleway",sans-serif;*/
+        /*    font-size: 16px;*/
+        /*    line-height: 1.6;*/
+        /*    color: #000000;*/
+        /*    background-color: #522972;*/
+        /*}*/
+        /*body {*/
+        /*    font-family: "Bangla",Hind Siliguri,kiron,SolaimanLipi,Arial,Vrinda,FallbackBengaliFont,Helvetica,sans-serif;*/
+        /*    background-color: #522972;*/
+        /*}*/
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        html {
+            font-size: 10px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .panel {
+            margin-bottom: 25px;
+            background-color: #f2ffbe;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+        }
+        .panel-primary {
+            border-color: #522972;
+        }
+        .panel {
+            margin-top: 20px;
+        }
+        .panel-heading {
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+        }
+        .panel-primary > .panel-heading {
+            color: #fff;
+            background-color: #522972;
+            border-color: #522972;
+        }
+        .panel-body {
+            padding: 15px;
+        }
+
+
+    * {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
         }
@@ -29,7 +97,7 @@
             display: block;
         }
         section {
-            background-color: #ffffff;
+            background-color: #edffa4;
             /*background-image: url("/images/background.png?95767ede6a7aff25bf176166a78a7957");*/
             background-repeat: repeat;
             background-size: 250px auto;
@@ -69,7 +137,7 @@
         }
         .panel {
             margin-bottom: 25px;
-            background-color: #fff;
+            background-color: #e2ffa4;
             border: 1px solid transparent;
             border-radius: 4px;
             -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -223,27 +291,33 @@
                 </div>
                 <div class="col-md-9">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>প্রোফাইল</strong>
+                        <div class="panel-heading colo">
+                            <strong>আবেদনের অগ্রগতি</strong>
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="thumbnail">
-                                        <img alt="{{\Illuminate\Support\Facades\Auth::user()->getAuthIdentifierName()}}" src="{{\Illuminate\Support\Facades\Storage::url('profile/'.auth()->user()->image)}}">
-                                    </div>
+{{--                                <div class="col-md-4">--}}
 {{--                                    <div class="thumbnail">--}}
-{{--                                        <img alt="jpeg" src="#">--}}
+{{--                                        <img alt="{{\Illuminate\Support\Facades\Auth::user()->getAuthIdentifierName()}}" src="{{\Illuminate\Support\Facades\Storage::url('profile/'.auth()->user()->image)}}">--}}
 {{--                                    </div>--}}
-                                </div>
+{{--                                    --}}
+{{--                                </div>--}}
                                 <div class="col-md-8">
-                                    <div><strong>নাম: </strong>{{auth()->user()->name}}</div>
+                                    <div><strong>জনাব </strong>{{auth()->user()->name}}</div>
+                                    <div>
+{{--                                        {{$application->landAmount}}--}}
+                                            @if($application->status=='pending')
+                                            <p v-text>আপনার আবেদন বিচারাধীন</p>
+                                             @endif
+                                             @if($application->status=='processing')
+                                            <p v-text>আপনার আবেদন যাচাই করা হচ্ছে</p>
+                                             @endif
+                                             @if($application->status=='approved')
+                                            <p v-text>আপনার আবেদন গৃহীত হয়েছে</p>
+                                            @endif
+
+                                    </div>
                                     <br>
-                                    <div><strong>মোবাইল নং: </strong>{{auth()->user()->phone}}</div>
-                                    <br>
-                                    <div><strong>ই-মেইল: </strong>{{auth()->user()->email}}</div>
-                                    <br>
-                                    <div><strong>স্মার্ট কার্ড/জাতীয় পরিচয়পত্র নং: </strong>{{auth()->user()->national_id}}</div>
                                     <div>
                                     </div>
                                 </div>
@@ -251,6 +325,39 @@
                         </div>
                     </div>
                 </div>
+
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="panel panel-primary">--}}
+{{--                            <div class="panel-heading">ঋণ পরিশোধের সময়</div>--}}
+{{--                            <div class="panel-body">--}}
+{{--                                24 Month--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-2">--}}
+{{--                        <div class="panel panel-primary">--}}
+{{--                            <div class="panel-heading">সরকারী কর্মকর্তার  প্রাথমিক যাচাই</div>--}}
+{{--                            <div class="panel-body">--}}
+{{--                                No--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-2">--}}
+{{--                        <div class="panel panel-primary">--}}
+{{--                            <div class="panel-heading">ব্যাংক কর্মকর্তার  যাচাই</div>--}}
+{{--                            <div class="panel-body">--}}
+{{--                                No--}}
+{{--                            </div>--}}
+{{--                        </div></div>--}}
+{{--                    <div class="col-md-2">--}}
+{{--                        <div class="panel panel-primary">--}}
+{{--                            <div class="panel-heading">ম্যানাজার কর্তৃক অনুমোদন</div>--}}
+{{--                            <div class="panel-body">--}}
+{{--                                No--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
 
             </div>
             <li>
@@ -265,7 +372,7 @@
                     @csrf
                 </form>
             </li>
-            <a class="btn btn-danger" href="{{route('home')}}">
+            <a class="btn btn-danger" href="{{route('user.applist')}}">
                 BACK
             </a>
         </div>

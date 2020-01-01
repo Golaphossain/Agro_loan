@@ -33,6 +33,7 @@ Route::group(['middleware'=>['auth']],function (){
     Route::put('/password-update','ProfileController@updatePassword')->name('password.update');
     Route::get('profile/{username}','AuthorController@profile')->name('author.profile');
     Route::get('application/{id}','ApplicationController@showForm')->name('applyforLoan');
+    Route::get('application-progress/{id}','ApplicationController@applyUpdate')->name('applicationProgress');
     Route::post('application/{id}','ApplicationController@processForm');
 });
 
@@ -79,12 +80,12 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
     Route::put('profile-update','SettingsController@updateProfile')->name('profile.update');
     Route::put('password-update','SettingsController@updatePassword')->name('password.update');
     Route::post('/logout','RegisterController@logout')->name('logout');
-    Route::get('/favorite','FavoriteController@index')->name('favorite.index');
     Route::get('loanApplications','LoanApplicationController@index')->name('application.index');
     Route::get('loanApplication/{id}','LoanApplicationController@details')->name('application.details');
-    Route::get('loanApplications/{id}','LoanApplicationController@delete')->name('application.destroy');
+    Route::put('loanApplication/{application}','LoanApplicationController@applyUpdate')->name('application.progress');
+    Route::delete('loanApplications/{id}','LoanApplicationController@delete')->name('application.destroy');
 });
-Route::group(['middleware'=>['auth']],function (){
-    Route::post('favorite/{post}/add','FavoriteController@add')->name('post.favorite');
-    Route::post('comment/{post}','CommentController@store')->name('comment.store');
-});
+//Route::group(['middleware'=>['auth']],function (){
+//    Route::post('favorite/{post}/add','FavoriteController@add')->name('post.favorite');
+//    Route::post('comment/{post}','CommentController@store')->name('comment.store');
+//});

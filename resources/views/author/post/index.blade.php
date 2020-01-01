@@ -35,7 +35,7 @@
 {{--                                    <th><i class="material-icons">visibility</i></th>--}}
                                     <th>Interest Rate</th>
                                     <th>Installment Type</th>
-                                    <th>Status</th>
+{{--                                    <th>Status</th>--}}
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -47,7 +47,7 @@
                                     {{--                                    <th><i class="material-icons">visibility</i></th>--}}
                                     <th>Interest Rate</th>
                                     <th>Installment Type</th>
-                                    <th>Status</th>
+{{--                                    <th>Status</th>--}}
                                     <th>Action</th>
 
                                 </tr>
@@ -70,13 +70,13 @@
 {{--                                                <span class="badge bg-pink">Pending</span>--}}
 {{--                                            @endif--}}
 {{--                                        </td>--}}
-                                        <td>
-                                            @if($post->status==true)
-                                                <span class="badge bg-blue">Published</span>
-                                            @else
-                                                <span class="badge bg-pink">Pending</span>
-                                            @endif
-                                        </td>
+{{--                                        <td>--}}
+{{--                                            @if($post->status==true)--}}
+{{--                                                <span class="badge bg-blue">Published</span>--}}
+{{--                                            @else--}}
+{{--                                                <span class="badge bg-pink">Pending</span>--}}
+{{--                                            @endif--}}
+{{--                                        </td>--}}
                                         <td class="text-center">
                                             <a href="{{route('author.post.show',$post->id)}}" class="btn btn-info waves-effect">
                                             <i class="material-icons">visibility</i>

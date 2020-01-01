@@ -6,6 +6,7 @@ use App\Application;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,6 +24,17 @@ class LoanApplicationController extends Controller
        $application=Application::where('id',$id)->first();
 //       return $application;
        return view('author.applicationDetails',compact('application'));
+   }
+   public function applyUpdate(Request $request,Application $application){
+//       return $request;
+//       $application=Application::where('id',$id)->get()->all();
+//       return $application;
+       $this->validate($request,[
+           'Application_state'=>'required',
+       ]);
+       $application->status=$request->Application_state;
+       $application->save();
+       return redirect()->back();
    }
    public function delete($id)
    {

@@ -89,7 +89,7 @@
         }
         .panel-default > .panel-heading {
             color: #333333;
-            background-color: #f5f5f5;
+            background-color: #5f7af5;
             border-color: #e6e5e5;
         }
         .panel-body {
@@ -284,6 +284,9 @@
                     @csrf
                 </form>
             </li>
+            <a class="btn btn-danger" href="{{route('user.profile')}}">
+                BACK
+            </a>
         </div>
     </section>
 @endsection

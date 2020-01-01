@@ -35,8 +35,7 @@ class ProfileController extends Controller
     {
         $this->validate($request,[
             'old_password'=>'required',
-//            'password'=>'required|confirmed',
-            'password'=>'required|min:8|confirmed'
+            'password'=>'required|min:8|confirmed',
         ]);
         $hashedPassword=Auth::user()->getAuthPassword();
         if (Hash::check($request->old_password,$hashedPassword)){

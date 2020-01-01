@@ -89,7 +89,7 @@
         }
         .panel-default > .panel-heading {
             color: #333333;
-            background-color: #f5f5f5;
+            background-color: #5f7af5;
             border-color: #e6e5e5;
         }
         .panel-body {
@@ -233,22 +233,22 @@
                                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                         <thead>
                                         <tr>
-                                            <th>Applicantion id</th>
+                                            <th>Id</th>
                                             <th>Loan title</th>
                                             <th>Loan amount</th>
                                             <th>Application Date</th>
                                             <th>Nominee name</th>
-                                            <th>Action</th>
+                                            <th>View progress</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th>Applicantion id</th>
+                                            <th>Id</th>
                                             <th>Loan title</th>
                                             <th>Loan amount</th>
                                             <th>Application Date</th>
                                             <th>Nominee name</th>
-                                            <th>Action</th>
+                                            <th>View progress</th>
 
                                         </tr>
                                         </tfoot>
@@ -270,7 +270,7 @@
 {{--                                                    </td>--}}
 
                                                     <td class="text-center">
-                                                        <a href="{{route('author.application.details',$application->id)}}" class="btn btn-info waves-effect">
+                                                        <a href="{{route('applicationProgress',$application->id)}}" class="btn btn-info waves-effect">
                                                             <i class="material-icons">visibility</i>
                                                         </a>
                                                     </td>
@@ -297,6 +297,9 @@
                     @csrf
                 </form>
             </li>
+            <a class="btn btn-danger" href="{{route('user.profile')}}">
+                BACK
+            </a>
         </div>
     </section>
 @endsection
