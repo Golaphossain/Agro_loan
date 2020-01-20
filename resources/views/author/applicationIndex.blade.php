@@ -9,10 +9,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="block-header">
-{{--            <a class="btn btn-primary waves-effect" href="{{route('author.post.create')}}">--}}
-{{--                <i class="material-icons">add</i>--}}
-{{--                    <span>Add New Offer</span>--}}
-{{--            </a>--}}
+
         </div>
 
         <!-- Exportable Table -->
@@ -50,28 +47,17 @@
                                 @foreach($posts as $key=>$post)
                                     @foreach($post->applications as $application)
                                     <tr>
-{{--                                        <td>{{$key+1}}</td>--}}
-{{--                                        <td>{{\Illuminate\Support\Str::limit($post->title,'8')}}</td>--}}
                                         <td>{{$application->farmerName}}</td>
-{{--                                        <td>{{$application->post_id}}</td>--}}
                                         <td>{{\Illuminate\Support\Str::limit($post->title,'20')}}</td>
                                         <td>{{$application->created_at->toFormattedDateString()}}</td>
                                         <td>
-{{--                                            @if($post->is_approved==true)--}}
-{{--                                                <span class="badge bg-blue">Approved</span>--}}
-{{--                                            @else--}}
-{{--                                                <span class="badge bg-pink">Pending</span>--}}
-{{--                                            @endif--}}
-                                            <span class="badge bg-blue">Approved</span>
+                                            <span class="badge bg-blue">{{$application->status}}</span>
                                         </td>
 
                                         <td class="text-center">
                                             <a href="{{route('author.application.details',$application->id)}}" class="btn btn-info waves-effect">
                                             <i class="material-icons">visibility</i>
                                             </a>
-{{--                                            <a href="{{route('author.post.edit',$post->id)}}" class="btn btn-info waves-effect">--}}
-{{--                                            <i class="material-icons">edit</i>--}}
-{{--                                            </a>--}}
                                             <button class="btn btn-danger waves-effect" type="button" onclick="deleteForm({{$application->id}})">
                                                 <i class="material-icons">delete</i>
                                             </button>

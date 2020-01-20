@@ -1,15 +1,15 @@
 <div class="header">
 {{--    <a href="#default" class="logo">CompanyLogo</a>--}}
-    <form class="navbar-form navbar-left" action="/action_page.php">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="search">
-            <div class="input-group-btn">
-                <button class="btn btn-success" type="submit">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+{{--    <form class="navbar-form navbar-left" action="/action_page.php">--}}
+{{--        <div class="input-group">--}}
+{{--            <input type="text" class="form-control" placeholder="Search" name="search">--}}
+{{--            <div class="input-group-btn">--}}
+{{--                <button class="btn btn-success" type="submit">--}}
+{{--                    <i class="glyphicon glyphicon-search"></i>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </form>--}}
 
     <div class="header-right">
 {{--        <a href="#home">Home</a>--}}
@@ -18,15 +18,15 @@
 {{--    </div>--}}
     <ul class="main-menu visible-on-click" id="main-menu">
 {{--        <li><a href="#"><i class="fa fa-bell"></i></a></li>--}}
-        <li class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-bell"></i>
-                <span class="badge badge-light">4</span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Notify</a> </li>
-            </ul>
-        </li>
+{{--        <li class="dropdown">--}}
+{{--            <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--            <i class="fa fa-bell"></i>--}}
+{{--                <span class="badge badge-light">4</span>--}}
+{{--            </a>--}}
+{{--            <ul class="dropdown-menu">--}}
+{{--                <li><a href="#">Notify</a> </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
         <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#">About</a></li>
 {{--               @guest--}}

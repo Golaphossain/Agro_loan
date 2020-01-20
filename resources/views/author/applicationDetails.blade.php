@@ -46,6 +46,24 @@
                         <div><h5>Nid No: </h5><p v-text>{{$application->nNid}}</p></div>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="header bg-info">
+                        <h2>
+                            Requested Loan
+                        </h2>
+                    </div>
+                    <div class="body">
+                        <h4>Loan ID :</h4>
+                        {{$application->post_id}}
+                        <br>
+                        <h4>Loan Title :</h4>
+                        {{$application->post->title}}
+                        <br>
+                        {{--                        <strong>Address :</strong>--}}
+                        {{--                        {{$application->address}}--}}
+                        {{--                        <br>--}}
+                    </div>
+                </div>
             </div>
 
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
@@ -72,27 +90,8 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>
-{{--                        <button class="btn btn-danger waves-effect" type="button" onclick="deletepost({{$post->id}})">--}}
-{{--                            <i class="material-icons">delete</i>--}}
-{{--                        </button>--}}
-{{--                        <form id="delete-form-{{$application->id}}" action="{{route('author.application.progress',$application->id)}}" method="POST" style="display: none;">--}}
-{{--                            @csrf--}}
-{{--                            @method('PUT')--}}
-{{--                    </form>--}}
                     </div>
                 </div>
-{{--                <div class="card">--}}
-{{--                    <div class="header bg-green">--}}
-{{--                        <h2>--}}
-{{--                            Tags--}}
-{{--                        </h2>--}}
-{{--                    </div>--}}
-{{--                    <div class="body">--}}
-{{--                        @foreach($post->tags as $tag)--}}
-{{--                            <span class="label bg-deep-purple">{{$tag->name}}</span>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
-{{--                </div>--}}
                 <div class="card">
                     <div class="header bg-light-blue">
                         <h2>
@@ -116,25 +115,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="header bg-info">
-                        <h2>
-                            Requested Loan
-                        </h2>
-                    </div>
-                    <div class="body">
-                        <h4>Loan ID :</h4>
-                        {{$application->post_id}}
-                        <br>
-                        <h4>Loan Title :</h4>
-                        {{$application->post->title}}
-                        <br>
-                        {{--                        <strong>Address :</strong>--}}
-                        {{--                        {{$application->address}}--}}
-                        {{--                        <br>--}}
-                    </div>
-                </div>            </div>
+
         </div>
         </form>
     </div>

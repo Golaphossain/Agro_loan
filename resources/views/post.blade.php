@@ -63,8 +63,12 @@
                                 {!! html_entity_decode($post->body) !!}
                             </div>
                             <ul>
+                                <li>
                                <a  class="btn btn-danger m-t-15 waves-effect" href="{{route('home')}}">BACK</a>
+                                </li>
+                                <li>
                                <a  class="btn btn-primary m-t-15 waves-effect" href="{{route('applyforLoan',$post->id)}}">APPLY</a>
+                                </li>
                             </ul>
                         </div><!-- blog-post-inner -->
 

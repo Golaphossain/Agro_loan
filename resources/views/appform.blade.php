@@ -73,7 +73,7 @@
         }
         .panel {
             margin-bottom: 25px;
-            background-color: #fff;
+            background-color: #e2ffa4;
             border: 1px solid transparent;
             border-radius: 4px;
             -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -93,7 +93,7 @@
         }
         .panel-default > .panel-heading {
             color: #333333;
-            background-color: #f5f5f5;
+            background-color: #5f7af5;
             border-color: #e6e5e5;
         }
         .panel-body {

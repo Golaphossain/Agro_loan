@@ -43,17 +43,23 @@
 
         .header {
             overflow: hidden;
-            background-color: #fff0ff;
-            padding: 20px 10px;
+            /*background-color: #604af5;*/
+            background-color: #5caff5;
+            /*padding: 10px 5px;*/
+            /*padding-top: 10px;*/
+            padding-right: 5px;
+            padding-bottom: 10px;
+            padding-left: 5px;
         }
 
         .header a {
             float: left;
-            color: black;
+            /*color: rgba(255, 255, 255, 0.88);*/
+            color:white;
             text-align: center;
             padding: 12px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 25px;
             border-radius: 4px;
         }
@@ -64,8 +70,8 @@
         }
 
         .header a:hover {
-            background-color: dodgerblue;
-            color: white;
+            background-color: #000000;
+            color: #ff3f4e;
         }
 
         .header a.active {
