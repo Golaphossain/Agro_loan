@@ -10,15 +10,19 @@ use Illuminate\Notifications\Messages\MailMessage;
 class NotifyUser extends Notification
 {
     use Queueable;
-
+    public $loantitle;
+    public $status;
+    public $orgName;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($loantitle,$status,$name)
     {
-        //
+        $this->loantitle=$loantitle;
+        $this->status=$status;
+        $this->orgName=$name;
     }
 
     /**
@@ -49,7 +53,9 @@ class NotifyUser extends Notification
     public function toDatabase($notifiable)
     {
         return[
-          //
+          'title'=>$this->loantitle,
+          'status'=>$this->status,
+          'name'=>$this->orgName,
         ];
     }
 

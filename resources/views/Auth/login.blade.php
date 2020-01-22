@@ -9,6 +9,16 @@
     <h1 class="title display-table-cell"><b>LOGIN</b></h1>
 </div><!-- slider -->
 <section class="blog-area section">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="container">
         <div class="row">
             <div class="col-lg-2 col-md-0"></div>

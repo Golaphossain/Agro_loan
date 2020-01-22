@@ -11,6 +11,7 @@
 |
 */
 
+use App\Category;
 use Illuminate\Support\Facades\Route;
 
 //Auth::routes();
@@ -24,6 +25,18 @@ Route::post('/logout','LoginController@logout')->name('logout');
 //user
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('posts','PostController@index')->name('posts.index');
+//Route::get('/markAsRead',function (){
+//    auth()->user()->unreadNotifications->markAsRead();
+//});
+//Route::get('/notifications',function (){
+//    auth()->user()->unreadNotifications->markAsRead();
+//    $categories=Category::all();
+////        $notifications=auth()->user()->notifications;
+//    $notifications = auth()->user()->notifications()->orderBy('created_at','desc')->take(5)->get();
+////        dd($notifications);
+////        auth()->user()->unreadNotifications->markAsRead();
+//    return view('notifications',compact('categories','notifications'));
+//})->name('notify');
 
 Route::group(['middleware'=>['auth']],function (){
     Route::get('offer/{id}','PostController@details')->name('post.details');
@@ -35,6 +48,8 @@ Route::group(['middleware'=>['auth']],function (){
     Route::get('application/{id}','ApplicationController@showForm')->name('applyforLoan');
     Route::get('application-progress/{id}','ApplicationController@applyUpdate')->name('applicationProgress');
     Route::post('application/{id}','ApplicationController@processForm');
+    Route::get('/notifications','HomeController@notify')->name('notify');
+
 });
 
 

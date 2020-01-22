@@ -44,10 +44,10 @@
                             <label for="image">Featured Image</label>
                             <input type="file" name="image">
                          </div>
-                         <div class="form-group ">
-                            <input type="checkbox" id="publish" name="status" class="filled-in" value="1">
-                            <label for="publish">Publish</label>
-                         </div>
+{{--                         <div class="form-group ">--}}
+{{--                            <input type="checkbox" id="publish" name="status" class="filled-in" value="1">--}}
+{{--                            <label for="publish">Publish</label>--}}
+{{--                         </div>--}}
                     </div>
                 </div>
             </div>
@@ -57,26 +57,26 @@
                         <h2></h2>
                     </div>
                     <div class="body">
-                        <div class="form-group form-float">
-                        <div class="form-line {{$errors->has('categories') ? 'focused error':''}}">
-                            <label for="category">Select Category</label>
-                            <select name="categories[]" id="category" class="form-control show-tick" data-live-search="true" multiple>
-                            @foreach($categories as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                        </div>
-                        <div class="form-group form-float">
-                        <div class="form-line  {{$errors->has('tags') ? 'focused error':''}}">
-                            <label for="tag">Select Tag</label>
-                            <select name="tags[]" id="tag" class="form-control show-tick" data-live-search="true" multiple>
-                            @foreach($tags as $tag)
-                            <option value="{{$tag->id}}">{{$tag->name}}</option>
-                            @endforeach
-                            </select>
-                        </div>
-                     </div>
+{{--                        <div class="form-group form-float">--}}
+{{--                        <div class="form-line {{$errors->has('categories') ? 'focused error':''}}">--}}
+{{--                            <label for="category">Select Category</label>--}}
+{{--                            <select name="categories[]" id="category" class="form-control show-tick" data-live-search="true" multiple>--}}
+{{--                            @foreach($categories as $category)--}}
+{{--                            <option value="{{$category->id}}">{{$category->name}}</option>--}}
+{{--                            @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group form-float">--}}
+{{--                        <div class="form-line  {{$errors->has('tags') ? 'focused error':''}}">--}}
+{{--                            <label for="tag">Select Tag</label>--}}
+{{--                            <select name="tags[]" id="tag" class="form-control show-tick" data-live-search="true" multiple>--}}
+{{--                            @foreach($tags as $tag)--}}
+{{--                            <option value="{{$tag->id}}">{{$tag->name}}</option>--}}
+{{--                            @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                     </div>--}}
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="installment">Installment Type</label>
@@ -89,17 +89,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group form-float">
-                            <div class="form-line  {{$errors->has('tags') ? 'focused error':''}}">
-{{--                                <label for="tag">Select Tag</label>--}}
-{{--                                <select name="tags" id="tag" class="form-control show-tick" data-live-search="true">--}}
-{{--                                    @foreach($tags as $tag)--}}
-{{--                                        <option value="{{$tag->id}}">{{$tag->name}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-                            </div>
-                        </div>
-
                         <br>
                         <a  class="btn btn-danger m-t-15 waves-effect" href="{{route('author.post.index')}}">BACK</a>
                         <button type="submit" class="btn btn-primary m-t-15 waves-effect">SUBMIT</button>

@@ -36,9 +36,9 @@ class PostController extends Controller
 
     public function create()
     {
-        $categories=Category::all();
-        $tags=Tag::all();
-        return view('author.post.create',compact('categories','tags'));
+//        $categories=Category::all();
+//        $tags=Tag::all();
+        return view('author.post.create');
     }
 
     public function store(Request $request)
@@ -46,8 +46,6 @@ class PostController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'image'=>'required',
-            'tags'=>'required',
-            'categories'=>'required',
             'body'=>'required',
             'loanSize'=>'required',
             'loanPeriod'=>'required',
@@ -78,16 +76,11 @@ class PostController extends Controller
         $post->loanPeriod=$request->loanPeriod;
         $post->interest_rate=$request->interest_rate;
         $post->installment_type=$request->installment_type;
-        if (isset($request->status)){
-            $post->status=true;
-        }
-        else{
-            $post->status=false;
-        }
+        $post->status=true;
         $post->is_approved=true;
         $post->save();
-        $post->categories()->attach($request->categories);
-        $post->tags()->attach($request->tags);
+//        $post->categories()->attach($request->categories);
+//        $post->tags()->attach($request->tags);
 
 //        $users=User::where('role_id','1')->get();
 //        Notification::send($users,new NewAuthorPost($post));
@@ -125,9 +118,9 @@ class PostController extends Controller
             Toastr::error('You are not permitted to access this post','Error');
             return redirect()->back();
         }
-        $categories=Category::all();
-        $tags=Tag::all();
-        return view('author.post.edit',compact('post','categories','tags'));
+//        $categories=Category::all();
+//        $tags=Tag::all();
+        return view('author.post.edit',compact('post'));
     }
 
     /**
@@ -146,8 +139,8 @@ class PostController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'image'=>'required',
-            'tags'=>'required',
-            'categories'=>'required',
+//            'tags'=>'required',
+//            'categories'=>'required',
             'body'=>'required',
             'loanSize'=>'required',
             'loanPeriod'=>'required',
@@ -180,16 +173,11 @@ class PostController extends Controller
         $post->loanPeriod=$request->loanPeriod;
         $post->interest_rate=$request->interest_rate;
         $post->installment_type=$request->installment_type;
-        if (isset($request->status)){
-            $post->status=true;
-        }
-        else{
-            $post->status=false;
-        }
+        $post->status=true;
         $post->is_approved=true;
         $post->save();
-        $post->categories()->sync($request->categories);
-        $post->tags()->sync($request->tags);
+//        $post->categories()->sync($request->categories);
+//        $post->tags()->sync($request->tags);
         Toastr::success('Post Updated Successfully :)','Success');
         return redirect()->route('author.post.index');
     }

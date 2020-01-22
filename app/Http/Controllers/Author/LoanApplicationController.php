@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Author;
 
 use App\Application;
+use App\Notifications\NotifyUser;
+use App\Organization;
 use Brian2694\Toastr\Facades\Toastr;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -34,11 +38,26 @@ class LoanApplicationController extends Controller
        ]);
        $application->status=$request->Application_state;
        $application->save();
+       $id=$application->user_id;
+       $status=$application->status;
+       $loantitle=$application->post->title;
+       $ido=Auth::guard('organization')->id();
+       $user=User::find($id);
+       $organization=Organization::find($ido);
+       $name=$organization->name;
+       $user->notify(new NotifyUser($loantitle,$status,$name));
        return redirect()->back();
    }
    public function delete($id)
    {
        $application=Application::where('id',$id)->first();
+       $idu=$application->user_id;
+       $status="rejected";
+       $loantitle=$application->post->title;
+       $ido=Auth::guard('organization')->id();
+       $user=User::find($idu);
+       $organization=Organization::find($ido);
+       $name=$organization->name;
        if(Storage::disk('public')->exists('applicationForm/'.$application->nidImage)){
            Storage::disk('public')->delete('applicationForm/'.$application->nidImage);
        }
@@ -51,6 +70,7 @@ class LoanApplicationController extends Controller
 
        $application->delete();
        Toastr::success('Form delete successfully :)','Success');
+       $user->notify(new NotifyUser($loantitle,$status,$name));
        return redirect()->back();
    }
 }

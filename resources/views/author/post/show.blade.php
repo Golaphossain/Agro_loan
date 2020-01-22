@@ -10,17 +10,17 @@
 
 <a href="{{route('author.post.index')}}" class="btn btn-danger waves-effect">BACK</a>
 
-@if($post->is_approved==false)
-    <button type="button" class="btn btn-success pull-right">
-    <i class="material-icons">done</i>
-        <span>Approved</span>
-    </button>
-@else
-        <button type="button" class="btn btn-success pull-right" disabled>
-            <i class="material-icons">done</i>
-            <span>Approved</span>
-        </button>
-@endif
+{{--@if($post->is_approved==false)--}}
+{{--    <button type="button" class="btn btn-success pull-right">--}}
+{{--    <i class="material-icons">done</i>--}}
+{{--        <span>Approved</span>--}}
+{{--    </button>--}}
+{{--@else--}}
+{{--        <button type="button" class="btn btn-success pull-right" disabled>--}}
+{{--            <i class="material-icons">done</i>--}}
+{{--            <span>Approved</span>--}}
+{{--        </button>--}}
+{{--@endif--}}
 <br>
     <br>
       <div class="row clearfix">
@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="header">
                         <h2>{{$post->title}}
-                        <small>Posted By <strong> <a href="">{{$post->organization->username}}</a></strong> on {{$post->created_at->toFormattedDateString() }}</small>
+                        <small>Offered By <strong> <a href="">{{$post->organization->username}}</a></strong> on {{$post->created_at->toFormattedDateString() }}</small>
                         </h2>
                     </div>
                     <div class="body">
@@ -49,30 +49,30 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="header bg-cyan">
-                        <h2>
-                            Categories
-                        </h2>
-                    </div>
-                    <div class="body">
-                        @foreach($post->categories as $category)
-                            <span class="label bg-primary ">{{$category->name}}</span>
-                            @endforeach
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="header bg-green">
-                        <h2>
-                            Tags
-                        </h2>
-                    </div>
-                    <div class="body">
-                        @foreach($post->tags as $tag)
-                            <span class="label bg-deep-purple">{{$tag->name}}</span>
-                        @endforeach
-                    </div>
-                </div>
+{{--                <div class="card">--}}
+{{--                    <div class="header bg-cyan">--}}
+{{--                        <h2>--}}
+{{--                            Categories--}}
+{{--                        </h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="body">--}}
+{{--                        @foreach($post->categories as $category)--}}
+{{--                            <span class="label bg-primary ">{{$category->name}}</span>--}}
+{{--                            @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="card">--}}
+{{--                    <div class="header bg-green">--}}
+{{--                        <h2>--}}
+{{--                            Tags--}}
+{{--                        </h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="body">--}}
+{{--                        @foreach($post->tags as $tag)--}}
+{{--                            <span class="label bg-deep-purple">{{$tag->name}}</span>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="card">
                     <div class="header bg-cyan">
                         <h2>

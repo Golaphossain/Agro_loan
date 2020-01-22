@@ -14,22 +14,22 @@ class ProfileController extends Controller
 {
     public function profile()
     {
-        $categories=Category::all();
+//        $categories=Category::all();
 //        return view('profile',compact('categories'));
-        return view('profileBest',compact('categories'));
+        return view('profileBest');
     }
     public function appFormlist()
     {
-        $categories=Category::all();
+//        $categories=Category::all();
         $applications=Auth::user()->applications()->get();
 //        $user_id=Auth::id();
 //        $applications=Application::Where('user_id',$user_id)->get()->all();
 //        return $applications;
-        return view('appList',compact('categories','applications'));
+        return view('appList',compact('applications'));
     }
     public function password(){
-        $categories=Category::all();
-        return view('password',compact('categories'));
+//        $categories=Category::all();
+        return view('password');
     }
     public function updatePassword(Request $request)
     {

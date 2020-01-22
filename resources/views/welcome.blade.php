@@ -197,8 +197,8 @@
 
                 </div><!-- row -->
 
-                <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
-
+{{--                <a class="load-more-btn" href="#"><b>LOAD MORE</b></a>--}}
+                {{$posts->links()}}
             </div><!-- container -->
         </section><!-- section -->
     @endsection

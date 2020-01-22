@@ -18,8 +18,8 @@ class ApplicationController extends Controller
     public function showForm($id)
     {
         $post=Post::where('id',$id)->approved()->published()->first();
-        $categories=Category::all();
-        return view('appform',compact('post','categories'));
+//        $categories=Category::all();
+        return view('appform',compact('post'));
     }
     public function processForm(Request $request,$id)
     {
@@ -93,10 +93,10 @@ class ApplicationController extends Controller
     }
     public function applyUpdate($id)
     {
-        $categories=Category::all();
+//        $categories=Category::all();
         $application=Application::where('id',$id)->first();
 //        return $application;
-        return view('progress',compact('application','categories'));
+        return view('progress',compact('application'));
 
     }
 }

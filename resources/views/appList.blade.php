@@ -271,7 +271,7 @@
 
                                                     <td class="text-center">
                                                         <a href="{{route('applicationProgress',$application->id)}}" class="btn btn-info waves-effect">
-                                                            <i class="material-icons">visibility</i>
+                                                            <i class=" material-icons">visibility</i>
                                                         </a>
                                                     </td>
                                                 </tr>

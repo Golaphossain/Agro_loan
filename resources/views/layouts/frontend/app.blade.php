@@ -183,6 +183,8 @@
 <script src="{{asset('assets/frontend/js/bootstrap.js')}}"></script>
 <script src="{{asset('assets/frontend/js/swiper.js')}}"></script>
 <script src="{{asset('assets/frontend/js/scripts.js')}}"></script>
+<script src="{{asset('assets/frontend/js/scripts.js')}}"></script>
+<script src="{{asset('assets/frontend/js/main.js')}}"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

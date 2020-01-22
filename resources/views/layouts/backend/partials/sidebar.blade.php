@@ -142,14 +142,8 @@
                         <span>Loan Application</span>
                     </a>
                 </li>
-{{--                <li class="{{\Illuminate\Support\Facades\Request::is('author/favorite') ? 'active' :''}}">--}}
-{{--                    <a href="{{route('author.favorite.index')}}">--}}
-{{--                    <a href="#">--}}
-{{--                        <i class="material-icons">favorite</i>--}}
-{{--                        <span>Favorite Offers</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-                <li class="header">System</li>
+
+{{--                <li class="header">System</li>--}}
                 <li class="{{\Illuminate\Support\Facades\Request::is('author/settings') ? 'active' :''}}">
                     <a href="{{route('author.settings')}}">
 {{--                    <a href="#">--}}
@@ -180,7 +174,7 @@
             &copy; 2019 - 2020 <a href="javascript:void(0);">Loan Management system</a>.
         </div>
         <div class="version">
-            <b>Version: </b> 1.0.5
+            <b>Version: </b> 1.0.0
         </div>
     </div>
     <!-- #Footer -->

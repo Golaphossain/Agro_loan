@@ -303,7 +303,7 @@
 {{--                                    --}}
 {{--                                </div>--}}
                                 <div class="col-md-8">
-                                    <div><strong>জনাব </strong>{{auth()->user()->name}}</div>
+                                    <div><strong>জনাব </strong></div>
                                     <div>
 {{--                                        {{$application->landAmount}}--}}
                                             @if($application->status=='pending')

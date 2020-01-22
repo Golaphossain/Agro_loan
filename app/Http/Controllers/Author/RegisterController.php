@@ -32,9 +32,9 @@ class RegisterController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'username'=>'required',
-            'email'=>'required|email',
-            'phone'=>'required|max:13',
-            'swift_code'=>'required|max:11',
+            'email'=>'required|unique:organizations,email',
+            'phone'=>'required|max:13|unique:organizations',
+            'swift_code'=>'required|max:11|unique:organizations',
             'password'=>'required|min:8|confirmed',
             'image'=>'required|image',
         ]);
