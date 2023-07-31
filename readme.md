@@ -8,9 +8,11 @@
 </p>
 
 # Agro_Loan
+
 Only 25% out of 2 core 60 lac farmers accepts agriculture (Krishi) and Polli loan. A large portion of remaining 75% of farmers do not apply for a loan for the lack of adequate knowledge. And also Lack of proper information about documents and interest rates for loans. We proposed a solution to solve this problem.
-## Features
--
+
+# Features
+
 - Organizations, farmers and other people who need loans required registration to apply for loans.
 - Organization and customer profiles are created automatically when they complete their registration. User can update their profile.
 - Organization posts their offer with proper instalment breakdowns including tax, interest, vat and other charges. They are allowed to edit and       delete their post.
